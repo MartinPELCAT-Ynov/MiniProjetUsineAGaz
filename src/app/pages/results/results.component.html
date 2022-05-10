@@ -1,0 +1,13 @@
+<div class="flex space-x-4 p-4">
+  <button
+    *ngFor="let framweork of framworks"
+    (click)="changeFilter(framweork)"
+    class="bg-white shadow border border-slate-200 p-2 rounded-md"
+  >
+    {{ framweork }}
+  </button>
+</div>
+
+<div class="grid grid-cols-3 gap-4 p-4">
+  <app-usercard *ngFor="let user of results" [user]="user"></app-usercard>
+</div>
