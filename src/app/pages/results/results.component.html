@@ -9,5 +9,9 @@
 </div>
 
 <div class="grid grid-cols-3 gap-4 p-4">
-  <app-usercard *ngFor="let user of results" [user]="user"></app-usercard>
+  <app-usercard
+    *ngFor="let user of results"
+    [user]="user"
+    (onDelete)="handleDelete($event)"
+  ></app-usercard>
 </div>

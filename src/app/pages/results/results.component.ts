@@ -49,6 +49,12 @@ export class ResultsComponent implements OnInit {
     }
   }
 
+  handleDelete(user: User) {
+    console.log('try to delete user', user);
+
+    this._results = this.results.filter((u) => u.id !== user.id);
+  }
+
   fetchVotes() {
     this.httpService.getUsers().subscribe((data) => {
       let dataToAdd = data.filter((user) => {
