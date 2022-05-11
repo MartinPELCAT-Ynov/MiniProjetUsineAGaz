@@ -22,13 +22,10 @@ export class UsercardComponent {
 
   constructor(private httpService: HttpService) {}
 
-  deleted = false;
-
   editMode: boolean = false;
 
   deleteUser() {
     this.httpService.deleteUser(this.user).subscribe(() => {
-      this.deleted = true;
       this.onDelete.emit(this.user);
     });
   }
